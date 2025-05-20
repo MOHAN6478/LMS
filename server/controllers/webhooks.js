@@ -74,7 +74,7 @@ export const stripeWebhooks = async (req,res) => {
             const paymentIntent = event.data.object;
             const paymentIntentId = paymentIntent.id;
 
-            const session = await stripeInstance.checkout.sessions.list({
+            const session = await stripeInstance.checkout.sessions.create({
                 payment_intent: paymentIntentId
             })
 
