@@ -38,7 +38,7 @@ export const purchaseCourse = async (req,res) => {
         const { origin } = req.headers;
         const userId = req.auth.userId
         const userData = await User.findById(userId)
-        const courseData = await Course.findById(userId)
+        const courseData = await Course.findById(courseId)
 
         if(!userData || !courseData){
             return res.json({ success : false, message : "Data Not Found"})
