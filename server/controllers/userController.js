@@ -70,7 +70,7 @@ export const purchaseCourse = async (req,res) => {
             quantity: 1
         }]
 
-        const session = new stripeInstance.checkout.create({
+        const session = new stripeInstance.checkout.sessions.create({
             succcess_url: `${origin}/loading/my-enrollments`,
             cancel_url: `${origin}/`,
             line_items: line_items,
